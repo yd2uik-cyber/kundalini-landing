@@ -1,0 +1,2015 @@
+<!doctype html>
+<html lang="id-ID">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline' 'unsafe-eval' 'wasm-unsafe-eval' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; style-src 'unsafe-inline' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; img-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data:; frame-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<title>kundalini-landing-page-concept.html</title>
+<style>:root{color-scheme:light dark;background:light-dark(rgb(255 255 255), rgb(24 24 24))}html,body{margin:0}body{box-sizing:border-box;padding:1rem;background:inherit}iframe{display:block;width:100%;max-width:736px;height:calc(100vh - 2rem);margin:0 auto;border:0}</style>
+</head>
+<body>
+<iframe id="codex-visualization" sandbox="allow-scripts" scrolling="no" referrerpolicy="no-referrer" title="kundalini-landing-page-concept.html" data-srcdoc="&lt;!doctype html&gt;
+&lt;html lang=&quot;id-ID&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+&lt;meta http-equiv=&quot;Content-Security-Policy&quot; content=&quot;default-src 'none'; script-src 'unsafe-inline' 'unsafe-eval' 'wasm-unsafe-eval' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; style-src 'unsafe-inline' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; img-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data:; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'&quot;&gt;
+&lt;title&gt;kundalini-landing-page-concept.html&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;script&gt;(() =&gt; {
+  const root = document.documentElement;
+  const mediaQuery = globalThis.matchMedia(&quot;(prefers-color-scheme: dark)&quot;);
+  const apply = Reflect.apply;
+  const isArray = Array.isArray;
+  const parentWindow = globalThis.parent;
+  /**
+   * @param {object} prototype
+   * @param {string} property
+   */
+  const getPrototypeGetter = (prototype, property) =&gt; {
+    // oxlint-disable-next-line typescript/unbound-method -- invoked through captured Reflect.apply
+    const getter = Object.getOwnPropertyDescriptor(prototype, property)?.get;
+    if (getter == null) {
+      throw new Error(`Missing ${property} getter`);
+    }
+    return getter;
+  };
+  const getMessageData = getPrototypeGetter(MessageEvent.prototype, &quot;data&quot;);
+  const getMessagePorts = getPrototypeGetter(MessageEvent.prototype, &quot;ports&quot;);
+  const getMessageSource = getPrototypeGetter(MessageEvent.prototype, &quot;source&quot;);
+  // oxlint-disable-next-line typescript/unbound-method -- captured before the untrusted fragment runs
+  const addHostMessageListener = MessagePort.prototype.addEventListener;
+  // oxlint-disable-next-line typescript/unbound-method -- captured before the untrusted fragment runs
+  const postHostMessage = MessagePort.prototype.postMessage;
+  // oxlint-disable-next-line typescript/unbound-method -- captured before the untrusted fragment runs
+  const startHostPort = MessagePort.prototype.start;
+  // oxlint-disable-next-line typescript/unbound-method -- captured before the untrusted fragment runs
+  const stopMessagePropagation = Event.prototype.stopImmediatePropagation;
+  /** @type {MessagePort | null} */
+  let hostPort = null;
+  const postToHost = (type, payload) =&gt; {
+    if (hostPort != null) {
+      apply(postHostMessage, hostPort, [{ type, ...payload }]);
+    }
+  };
+  const openExternal = ({ href }) =&gt; {
+    if (globalThis.navigator.userActivation?.isActive === true) {
+      postToHost(&quot;open-external&quot;, { href });
+    }
+  };
+  const sendFollowUpMessage = ({ context, prompt, title }) =&gt; {
+    if (globalThis.navigator.userActivation?.isActive === true) {
+      postToHost(&quot;follow-up&quot;, { context, prompt, title });
+    }
+    return Promise.resolve();
+  };
+  const syncTheme = () =&gt; {
+    const theme = mediaQuery.matches ? &quot;dark&quot; : &quot;light&quot;;
+    root.dataset.theme = theme;
+    globalThis.openai = {
+      ...globalThis.openai,
+      openExternal,
+      sendFollowUpMessage,
+      theme,
+      visualizationStyleVariables: {},
+      visualizationTheme: theme,
+    };
+    globalThis.dispatchEvent(
+      new CustomEvent(&quot;openai:set_globals&quot;, {
+        detail: { globals: globalThis.openai },
+      }),
+    );
+  };
+  const sendHeight = () =&gt; {
+    postToHost(&quot;height&quot;, {
+      height: Math.ceil(
+        Math.max(
+          document.body.scrollHeight,
+          document.body.getBoundingClientRect().height,
+        ),
+      ),
+    });
+  };
+
+  globalThis.addEventListener(
+    &quot;message&quot;,
+    (event) =&gt; {
+      const data = apply(getMessageData, event, []);
+      const ports = apply(getMessagePorts, event, []);
+      const source = apply(getMessageSource, event, []);
+      if (
+        source !== parentWindow ||
+        typeof data !== &quot;object&quot; ||
+        data?.type !== &quot;codex-visualization-initialize&quot; ||
+        !isArray(ports) ||
+        ports.length !== 1
+      ) {
+        return;
+      }
+      apply(stopMessagePropagation, event, []);
+      const nextHostPort = ports[0];
+      try {
+        apply(addHostMessageListener, nextHostPort, [
+          &quot;message&quot;,
+          (event) =&gt; {
+            const data = apply(getMessageData, event, []);
+            if (typeof data === &quot;object&quot; &amp;&amp; data?.type === &quot;measure&quot;) {
+              sendHeight();
+            }
+          },
+        ]);
+        apply(startHostPort, nextHostPort, []);
+      } catch {
+        return;
+      }
+      hostPort = nextHostPort;
+      sendHeight();
+    },
+    { capture: true },
+  );
+  document.currentScript?.remove();
+  mediaQuery.addEventListener(&quot;change&quot;, syncTheme);
+  globalThis.addEventListener(&quot;click&quot;, (event) =&gt; {
+    if (event.defaultPrevented) {
+      return;
+    }
+    let element = null;
+    if (event.target instanceof globalThis.Element) {
+      element = event.target;
+    } else if (event.target instanceof globalThis.Node) {
+      element = event.target.parentElement;
+    }
+    const link = element?.closest(&quot;a[href]&quot;);
+    const href = link?.getAttribute(&quot;href&quot;);
+    if (href == null) {
+      return;
+    }
+    if (href.startsWith(&quot;#&quot;)) {
+      let id;
+      try {
+        id = decodeURIComponent(href.slice(1));
+      } catch {
+        return;
+      }
+      const target = id.length === 0 ? root : document.getElementById(id);
+      if (
+        target == null ||
+        globalThis.navigator.userActivation?.isActive !== true
+      ) {
+        return;
+      }
+      event.preventDefault();
+      postToHost(&quot;scroll-to&quot;, {
+        top: target.getBoundingClientRect().top + globalThis.scrollY,
+      });
+      return;
+    }
+    event.preventDefault();
+    openExternal({ href });
+  });
+  new ResizeObserver(sendHeight).observe(document.body);
+  syncTheme();
+})();
+&lt;/script&gt;
+&lt;style&gt;:root {
+  color-scheme: light dark;
+  background-color: var(
+    --background,
+    var(--color-background-primary, light-dark(rgb(255 255 255), rgb(24 24 24)))
+  ) !important;
+
+  /* Agent-facing contract; keep in sync with SKILL.md. */
+  --background: var(
+    --color-background-primary,
+    light-dark(rgb(255 255 255), rgb(24 24 24))
+  );
+  --foreground: var(
+    --color-text-primary,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --card: color-mix(in oklab, var(--foreground) 5%, var(--background));
+  --card-foreground: var(
+    --color-text-primary,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --popover: var(
+    --color-background-secondary,
+    light-dark(rgb(255 255 255), rgb(45 45 45))
+  );
+  --popover-foreground: var(
+    --color-text-primary,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --primary: var(
+    --color-text-info,
+    light-dark(rgb(51 156 255), rgb(131 195 255))
+  );
+  --primary-foreground: var(
+    --color-text-inverse,
+    light-dark(rgb(255 255 255), rgb(13 13 13))
+  );
+  --secondary: var(
+    --color-background-secondary,
+    light-dark(rgb(255 255 255 / 96%), rgb(54 54 54 / 96%))
+  );
+  --secondary-foreground: var(
+    --color-text-primary,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --muted: color-mix(in srgb, var(--foreground) 10%, transparent);
+  --muted-foreground: var(
+    --color-text-secondary,
+    light-dark(rgb(26 28 31 / 49.4%), rgb(255 255 255 / 49.8%))
+  );
+  --accent: var(
+    --color-background-info,
+    light-dark(rgb(229 242 255), rgb(13 39 63))
+  );
+  --accent-foreground: var(
+    --color-text-info,
+    light-dark(rgb(51 156 255), rgb(131 195 255))
+  );
+  --destructive: var(
+    --color-text-warning,
+    light-dark(rgb(226 85 7), rgb(255 133 73))
+  );
+  --border: var(
+    --color-border-secondary,
+    light-dark(rgb(26 28 31 / 8%), rgb(255 255 255 / 8.2%))
+  );
+  --input: var(
+    --color-border-primary,
+    light-dark(
+      rgb(26 28 31 / 11.8%),
+      color-mix(in oklab, rgb(0 0 0) 10%, transparent)
+    )
+  );
+  --ring: var(
+    --color-ring-primary,
+    light-dark(rgb(51 156 255), rgb(131 195 255 / 76%))
+  );
+  --font-size-base: var(--font-text-md-size, 14px);
+  --blue: light-dark(rgb(51 156 255), rgb(51 156 255));
+  --orange: light-dark(rgb(226 85 7), rgb(251 106 34));
+  --green: light-dark(rgb(0 162 64), rgb(64 201 119));
+  --red: light-dark(rgb(224 46 42), rgb(255 103 100));
+  --purple: light-dark(rgb(146 79 247), rgb(173 123 249));
+  --yellow: light-dark(rgb(255 195 0), rgb(255 210 64));
+  --viz-series-1: var(--primary);
+  --viz-series-2: light-dark(rgb(243 136 59), rgb(245 154 86));
+  --viz-series-3: light-dark(rgb(93 201 119), rgb(116 213 139));
+  --viz-series-4: light-dark(rgb(235 119 177), rgb(240 143 192));
+  --viz-series-5: light-dark(rgb(155 121 236), rgb(170 145 239));
+  --viz-series-6: light-dark(rgb(58 185 177), rgb(90 203 194));
+
+  /* Internal implementation variables; not part of the agent contract. */
+  --font-sans: -apple-system, system-ui, &quot;Segoe UI&quot;, sans-serif;
+  --font-mono:
+    ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;,
+    monospace;
+  --font-size-normal: max(11px, var(--font-size-base));
+  --font-size-tooltip: calc(var(--font-size-base) - 1px);
+  --font-size-small: max(11px, calc(var(--font-size-base) - 2px));
+  --font-size-h1: calc(var(--font-size-normal) * 1.7142857143);
+  --font-size-h2: calc(var(--font-size-normal) * 1.4285714286);
+  --font-size-h3: calc(var(--font-size-normal) * 1.2857142857);
+  --font-weight-normal: 430;
+  --font-weight-medium: 500;
+  --line-height-normal: calc(var(--font-size-normal) * 1.5);
+  --line-height-tooltip: calc(var(--font-size-tooltip) * 1.4285714286);
+  --line-height-small: calc(var(--font-size-small) + 4px);
+  --radius: var(--border-radius-lg, 12.5px);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-2xl: calc(var(--radius) * 1.6);
+  --radius-full: 9999px;
+  --shadow-sm: 0 1px 2px -1px rgb(0 0 0 / 8%);
+  --checkmark-image: url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 17 17'%3E%3Cpath d='M12.8961 3.64101C13.1297 3.41418 13.4984 3.37523 13.7779 3.56581C14.0571 3.75635 14.1554 4.11331 14.0299 4.41347L13.9615 4.53847L7.71151 13.7045C7.59411 13.8767 7.4063 13.9877 7.19881 14.0072C6.99136 14.0267 6.78564 13.9533 6.63826 13.806L2.88826 10.056L2.79842 9.9457C2.6192 9.67407 2.64927 9.30496 2.88826 9.06581C3.12738 8.82669 3.49647 8.79676 3.76815 8.97597L3.8785 9.06581L7.03084 12.2182L12.8053 3.74941L12.8961 3.64101Z'/%3E%3C/svg%3E&quot;);
+
+  /* Legacy aliases; not part of the current agent contract. */
+  --viz-bg: transparent;
+  --viz-panel: var(--card);
+  --viz-border: var(--border);
+  --viz-text: var(--foreground);
+  --viz-muted: var(--muted-foreground);
+  --viz-accent: var(--primary);
+  --viz-accent-text: var(--primary-foreground);
+  --viz-accent-bg: var(--accent);
+  --viz-font-size: var(--font-size-base);
+  --viz-warning: var(--destructive);
+}
+
+:root[data-theme=&quot;light&quot;] {
+  color-scheme: light;
+}
+
+:root[data-theme=&quot;dark&quot;] {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html &gt; body {
+  /* Preserve MCP aliases for older inline renderers without creating :root cycles. */
+  --color-background-primary: var(
+    --background,
+    light-dark(rgb(255 255 255), rgb(24 24 24))
+  );
+  --color-text-primary: var(
+    --foreground,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --color-border-secondary: var(
+    --border,
+    light-dark(rgb(26 28 31 / 8%), rgb(255 255 255 / 8.2%))
+  );
+
+  margin: 0;
+  padding: 5px;
+  color: var(--foreground);
+  background: transparent !important;
+  font-family: var(--font-sans) !important;
+  font-size: var(--font-size-normal);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-normal);
+}
+
+a {
+  color: color-mix(in srgb, var(--viz-accent) 80%, var(--viz-text) 20%);
+  cursor: pointer;
+  font-weight: var(--font-weight-medium, 500);
+  text-decoration: none;
+  text-underline-offset: 2px;
+}
+
+a:is(:hover, :focus-visible) {
+  text-decoration-line: underline;
+  text-decoration-style: dashed;
+  text-decoration-thickness: 0.5px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-block: 0;
+}
+
+h1 {
+  font-size: var(--font-size-h1);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.25;
+}
+
+h2 {
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.25;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.3;
+}
+
+b,
+strong,
+th {
+  font-weight: var(--font-weight-medium);
+}
+
+code:not(pre code) {
+  display: inline;
+  padding: 1px 6px;
+  border-radius: var(--radius-sm);
+  corner-shape: superellipse(1.5);
+  background: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+  overflow-wrap: anywhere;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  word-break: break-word;
+}
+
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  color: var(--foreground);
+  font: inherit;
+  text-align: start;
+}
+
+.table :is(th, td) {
+  padding-block: 10px;
+  padding-inline: 0 24px;
+  overflow-wrap: anywhere;
+  border-bottom: 1px solid var(--border);
+  text-align: start;
+  vertical-align: top;
+}
+
+.table-responsive &gt; .table :is(th, td) {
+  overflow-wrap: break-word;
+}
+
+.table :is(th, td):last-child {
+  padding-inline-end: 0;
+}
+
+.table :is(caption, thead th) {
+  font-weight: 600;
+}
+
+.table thead th {
+  padding-block: 8px;
+  border-bottom-color: color-mix(in srgb, var(--foreground) 16%, transparent);
+}
+
+.table tbody tr:last-child :is(th, td) {
+  border-bottom: 0;
+}
+
+.table.table-sm :is(th, td) {
+  padding-block: 6px;
+}
+
+.table.table-sm :is(th, td):not(:last-child) {
+  padding-inline-end: 16px;
+}
+
+.table :is(.text-end, [align=&quot;right&quot;]) {
+  text-align: end;
+  font-variant-numeric: tabular-nums;
+}
+
+.table :is(.text-center, [align=&quot;center&quot;]) {
+  text-align: center;
+}
+
+.table .text-nowrap {
+  white-space: nowrap;
+}
+
+#widget {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  padding: 0;
+  background: transparent !important;
+}
+
+.card {
+  min-width: 0;
+  padding: 12px;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  border-radius: var(--radius-2xl);
+  corner-shape: superellipse(1.5);
+  color: var(--card-foreground);
+  background: var(--card);
+}
+
+#widget &gt; :not(.card, .progress) {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.tooltip {
+  position: fixed;
+  z-index: 50;
+  top: 0;
+  left: 0;
+  width: max-content;
+  max-width: min(
+    20rem,
+    var(--tooltip-available-width, calc(100vw - 10px)),
+    calc(100vw - 10px)
+  );
+  max-height: min(
+    var(--tooltip-available-height, calc(100vh - 10px)),
+    calc(100vh - 10px)
+  );
+  padding: 4px 8px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  corner-shape: superellipse(1.5);
+  color: var(--popover-foreground);
+  background: var(--popover);
+  box-shadow: none;
+  font-size: var(--font-size-tooltip);
+  line-height: var(--line-height-tooltip);
+  overflow-wrap: break-word;
+  white-space: normal;
+  pointer-events: none;
+  user-select: none;
+}
+
+.viz-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(max(180px, 24%), 1fr));
+  gap: 10px;
+}
+
+.viz-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.viz-stat-value {
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.25;
+}
+
+.viz-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.progress {
+  display: flex;
+  height: 6px;
+  margin-block: calc((var(--line-height-normal, 1.5em) - 6px) / 2);
+  overflow: hidden;
+  border: 0;
+  border-radius: var(--radius-full);
+  background: var(--muted);
+}
+
+.progress-bar {
+  height: 100%;
+  flex-shrink: 0;
+  border: 0;
+  background: var(--viz-series-1);
+}
+
+.viz-badge {
+  padding: 3px 8px;
+  border-radius: var(--radius-full);
+  color: var(--accent-foreground);
+  background: var(--accent);
+  font-weight: var(--font-weight-medium);
+}
+
+small,
+.text-small,
+.viz-badge {
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-small);
+}
+
+.text-muted {
+  color: var(--muted-foreground);
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.viz-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.viz-controls &gt; .form-label {
+  display: grid;
+  min-width: min(100%, 260px);
+  flex: 1 1 280px;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: 2px 12px;
+  margin-bottom: 0;
+}
+
+.viz-controls &gt; .form-label &gt; :is(.form-control, .form-range, .form-select) {
+  grid-column: 1 / -1;
+}
+
+.btn,
+.form-check-input,
+.form-control,
+.form-range,
+.form-select {
+  font: inherit;
+}
+
+.btn {
+  appearance: button;
+  display: inline-flex;
+  inline-size: fit-content;
+  max-inline-size: 100%;
+  min-height: 28px;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  margin: 0;
+  padding: 0 8px;
+  -webkit-app-region: no-drag;
+  border: 1px solid var(--input);
+  border-radius: var(--radius-lg);
+  corner-shape: superellipse(1.5);
+  color: var(--secondary-foreground);
+  background: var(--secondary);
+  cursor: var(--cursor-interaction, pointer);
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+.btn:is(.btn-block, .viz-tile) {
+  inline-size: 100%;
+}
+
+.btn.viz-tile {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+
+a.btn {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn:not(:disabled):hover {
+  background: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
+}
+
+.btn-primary {
+  border-color: transparent;
+  color: var(--primary-foreground);
+  background: var(--foreground);
+  background-clip: padding-box;
+}
+
+.btn-primary .text-muted {
+  color: color-mix(in srgb, var(--primary-foreground) 50%, transparent);
+}
+
+.btn-primary:not(:disabled):hover {
+  background: color-mix(in srgb, var(--foreground) 80%, transparent);
+  background-clip: padding-box;
+}
+
+.btn-ghost {
+  border-color: transparent;
+  color: var(--muted-foreground);
+  background: transparent;
+}
+
+.btn-ghost:not(:disabled):hover {
+  color: var(--foreground);
+  background: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+[data-lucide] {
+  stroke-width: 1.6;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--foreground);
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  min-height: 28px;
+  padding: 0 8px;
+  outline: none;
+  border: 1px solid var(--input);
+  border-radius: var(--radius-lg);
+  corner-shape: superellipse(1.5);
+  color: var(--foreground);
+  background: var(--secondary);
+}
+
+.form-control::placeholder {
+  color: var(--muted-foreground);
+}
+
+.form-control[type=&quot;file&quot;] {
+  padding: 0;
+  overflow: hidden;
+  cursor: var(--cursor-interaction, pointer);
+}
+
+.form-control[type=&quot;file&quot;]::file-selector-button {
+  min-height: 26px;
+  margin-right: 8px;
+  padding: 0 8px;
+  border: 0;
+  border-right: 1px solid var(--input);
+  color: var(--secondary-foreground);
+  background: var(--secondary);
+  cursor: inherit;
+  font: inherit;
+}
+
+.form-control[type=&quot;file&quot;]:not(:disabled):hover::file-selector-button {
+  background: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
+}
+
+.form-control-color[type=&quot;color&quot;] {
+  width: 40px;
+  height: 28px;
+  padding: 3px;
+  cursor: var(--cursor-interaction, pointer);
+}
+
+.form-control-color[type=&quot;color&quot;]::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+.form-control-color[type=&quot;color&quot;]::-webkit-color-swatch {
+  border: 0;
+  border-radius: calc(var(--radius-lg) - 4px);
+  corner-shape: superellipse(1.5);
+}
+
+textarea.form-control {
+  height: auto;
+  min-height: 72px;
+  padding: 8px 10px;
+  resize: vertical;
+}
+
+.form-control:focus-visible {
+  border-color: var(--ring);
+  box-shadow: inset 0 0 0 1px var(--ring);
+}
+
+.form-control:disabled,
+.form-select:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.form-select {
+  appearance: none;
+  display: block;
+  width: 100%;
+  min-height: 28px;
+  margin: 0;
+  padding: 0 32px 0 8px;
+  outline: none;
+  border: 1px solid var(--input);
+  border-radius: var(--radius-lg);
+  corner-shape: superellipse(1.5);
+  color: var(--foreground);
+  background-color: var(--secondary);
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--muted-foreground) 50%),
+    linear-gradient(135deg, var(--muted-foreground) 50%, transparent 50%);
+  background-position:
+    calc(100% - 14px) 50%,
+    calc(100% - 10px) 50%;
+  background-repeat: no-repeat;
+  background-size: 4px 4px;
+  cursor: var(--cursor-interaction, default);
+}
+
+.form-select:not(:disabled):hover {
+  background-color: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
+}
+
+.form-select:focus-visible {
+  border-color: var(--ring);
+  box-shadow: inset 0 0 0 1px var(--ring);
+}
+
+.form-check {
+  display: flex;
+  min-height: 20px;
+  align-items: center;
+  gap: 6px;
+}
+
+.form-check-input {
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  flex: 0 0 auto;
+  margin: 0;
+  border: 1px solid var(--input);
+  color: var(--primary-foreground);
+  background-color: transparent;
+  cursor: var(--cursor-interaction, default);
+  transition:
+    background-color 150ms,
+    border-color 150ms,
+    box-shadow 150ms;
+}
+
+.form-check:not(.form-switch) .form-check-input[type=&quot;checkbox&quot;] {
+  border-color: var(--input);
+  border-radius: var(--radius-sm);
+  corner-shape: superellipse(1.5);
+  background-color: var(--secondary);
+  box-shadow: var(--shadow-sm);
+}
+
+.form-check:not(.form-switch)
+  .form-check-input:not(:disabled):not(:checked):hover {
+  background-color: var(--card);
+}
+
+.form-check:not(.form-switch) .form-check-input[type=&quot;checkbox&quot;]:checked {
+  border-color: var(--primary);
+  background-color: var(--primary);
+}
+
+.form-check:not(.form-switch)
+  .form-check-input[type=&quot;checkbox&quot;]:checked::before {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: var(--primary-foreground);
+  content: &quot;&quot;;
+  mask: var(--checkmark-image) center / 12px 12px no-repeat;
+}
+
+.form-check-input[type=&quot;radio&quot;] {
+  width: 14px;
+  height: 14px;
+  border-radius: var(--radius-full);
+}
+
+.form-check-input[type=&quot;radio&quot;]:checked {
+  border: 2px solid var(--primary);
+  background:
+    radial-gradient(circle, var(--primary-foreground) 0 2.5px, transparent 3px),
+    var(--primary);
+}
+
+.form-check:not(.form-switch) .form-check-input:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+.form-check:not(.form-switch) .form-check-input:disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.form-check:not(.form-switch) .form-check-input:disabled + .form-check-label {
+  cursor: not-allowed;
+}
+
+.form-switch .form-check-input:disabled,
+.form-switch .form-check-input:disabled + .form-check-label {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.form-check-label {
+  color: var(--foreground);
+  cursor: var(--cursor-interaction, default);
+}
+
+.form-switch .form-check-input {
+  position: relative;
+  width: 32px;
+  height: 20px;
+  border: 0;
+  border-radius: var(--radius-full);
+  background: var(--muted);
+  box-shadow: none;
+  transition: background-color 200ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.form-switch .form-check-input::before {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  box-sizing: border-box;
+  border: 1px solid light-dark(var(--primary-foreground), var(--foreground));
+  border-radius: var(--radius-full);
+  background: light-dark(var(--primary-foreground), var(--foreground));
+  box-shadow: var(--shadow-sm);
+  content: &quot;&quot;;
+  transform: translate(2px, -50%);
+  transition: transform 200ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.form-switch .form-check-input:checked {
+  background: var(--primary);
+}
+
+.form-switch .form-check-input:checked::before {
+  transform: translate(14px, -50%);
+}
+
+.form-switch .form-check-input:focus-visible {
+  box-shadow: 0 0 0 2px var(--ring);
+}
+
+.form-range {
+  appearance: none;
+  display: block;
+  width: 100%;
+  height: 28px;
+  flex: 1;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: 0;
+  accent-color: var(--primary);
+  background: linear-gradient(
+      color-mix(in srgb, var(--foreground) 7%, transparent),
+      color-mix(in srgb, var(--foreground) 7%, transparent)
+    )
+    center / 100% 2px no-repeat;
+}
+
+.form-range::-webkit-slider-runnable-track {
+  height: 28px;
+  background: transparent;
+}
+
+.form-range::-webkit-slider-thumb {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  margin-top: 4px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  background: light-dark(var(--primary-foreground), var(--foreground));
+}
+
+.form-range:focus-visible::-webkit-slider-thumb {
+  border-color: var(--ring);
+  box-shadow: inset 0 0 0 1px var(--ring);
+}
+
+.form-range::-moz-range-track {
+  height: 28px;
+  background: transparent;
+}
+
+.form-range::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  background: light-dark(var(--primary-foreground), var(--foreground));
+}
+
+.form-range:focus-visible::-moz-range-thumb {
+  border-color: var(--ring);
+  box-shadow: inset 0 0 0 1px var(--ring);
+}
+
+.form-range:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.btn:not(.btn-primary, .viz-tile):is(
+  [aria-pressed=&quot;true&quot;],
+  [aria-selected=&quot;true&quot;],
+  .is-selected
+) {
+  border-color: var(--primary);
+  color: var(--primary-foreground);
+  background: var(--primary);
+}
+
+.btn.viz-tile:is([aria-pressed=&quot;true&quot;], [aria-selected=&quot;true&quot;], .is-selected) {
+  border-color: var(--primary);
+  box-shadow: inset 0 0 0 1px var(--primary);
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+@media (pointer: coarse) {
+  .btn,
+  .form-control,
+  .form-select {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .form-control,
+  .form-select {
+    font-size: max(16px, var(--font-size-normal));
+  }
+
+  .form-control[type=&quot;file&quot;]::file-selector-button {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .form-control-color[type=&quot;color&quot;] {
+    width: 44px;
+    height: 44px;
+  }
+
+  .form-control:is(
+    [type=&quot;date&quot;],
+    [type=&quot;datetime-local&quot;],
+    [type=&quot;month&quot;],
+    [type=&quot;time&quot;],
+    [type=&quot;week&quot;]
+  ) {
+    min-width: 0;
+    max-width: 100%;
+    padding-block: 8px;
+  }
+
+  .form-check {
+    min-height: 44px;
+    padding-inline: 15px;
+  }
+
+  .form-check-input {
+    position: relative;
+  }
+
+  .form-check-input::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 44px;
+    height: 44px;
+    content: &quot;&quot;;
+    transform: translate(-50%, -50%);
+  }
+
+  .form-check-label {
+    display: inline-flex;
+    min-width: 44px;
+    min-height: 44px;
+    align-items: center;
+  }
+
+  .form-range {
+    height: 44px;
+    touch-action: pan-y;
+  }
+
+  .form-range::-webkit-slider-runnable-track {
+    height: 44px;
+  }
+
+  .form-range::-moz-range-track {
+    height: 44px;
+  }
+
+  .form-range::-webkit-slider-thumb {
+    margin-top: 12px;
+  }
+}
+
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+#widget &gt; svg {
+  width: 100%;
+}
+
+/* Model-authored chart rules can otherwise stretch icons after these styles load. */
+svg.lucide {
+  display: block;
+  width: 16px !important;
+  height: 16px !important;
+  flex: none;
+  margin: 0 !important;
+  stroke-width: 1.6;
+}
+
+.text-warning,
+.text-destructive {
+  color: var(--destructive);
+}
+
+html&gt;body{padding:0}&lt;/style&gt;
+&lt;script&gt;
+(() =&gt; {
+  const root = document.documentElement;
+  const initialGlobals =
+    globalThis.__codexVisualizationInitialGlobals ?? globalThis.openai;
+  delete globalThis.__codexVisualizationInitialGlobals;
+  let appliedProperties = [];
+
+  const applyHostStyleVariables = (styleVariables) =&gt; {
+    if (styleVariables == null || typeof styleVariables !== &quot;object&quot;) {
+      return;
+    }
+    for (const property of appliedProperties) {
+      root.style.removeProperty(property);
+    }
+    appliedProperties = [];
+    for (const [property, value] of Object.entries(styleVariables)) {
+      if (property.startsWith(&quot;--&quot;) &amp;&amp; typeof value === &quot;string&quot;) {
+        root.style.setProperty(property, value);
+        appliedProperties.push(property);
+      }
+    }
+  };
+
+  const syncHostStyles = (globals) =&gt; {
+    applyHostStyleVariables(globals?.visualizationStyleVariables);
+    const sandboxDocument = globalThis.frameElement?.ownerDocument;
+    if (sandboxDocument != null &amp;&amp; globals?.visualizationTheme != null) {
+      let colorSchemeMeta = sandboxDocument.querySelector(
+        'meta[name=&quot;color-scheme&quot;]',
+      );
+      if (colorSchemeMeta == null) {
+        colorSchemeMeta = sandboxDocument.createElement(&quot;meta&quot;);
+        colorSchemeMeta.name = &quot;color-scheme&quot;;
+        sandboxDocument.head.appendChild(colorSchemeMeta);
+      }
+      colorSchemeMeta.content = globals.visualizationTheme;
+      sandboxDocument.documentElement.style.colorScheme =
+        globals.visualizationTheme;
+      // Paint the host surface behind transparent saved visualization documents.
+      sandboxDocument.documentElement.style.backgroundColor =
+        root.style.getPropertyValue(&quot;--background&quot;);
+    }
+  };
+
+  syncHostStyles(initialGlobals);
+  globalThis.addEventListener(&quot;openai:set_globals&quot;, (event) =&gt; {
+    syncHostStyles(event.detail?.globals);
+  });
+})();
+&lt;/script&gt;
+
+&lt;div id=&quot;kundalini-landing-concept&quot; class=&quot;klp-light&quot;&gt;
+  &lt;style&gt;
+    #kundalini-landing-concept {
+      --klp-teal: #0e5555;
+      --klp-teal-deep: #083e3e;
+      --klp-green: #629766;
+      --klp-terra: #dc6b3d;
+      --klp-gold: #f5aa32;
+      --klp-bg: #f7f3e8;
+      --klp-surface: rgba(255, 255, 255, .68);
+      --klp-surface-strong: rgba(255, 255, 255, .9);
+      --klp-text: #123c3a;
+      --klp-muted: #59706d;
+      --klp-line: rgba(14, 85, 85, .15);
+      --klp-shadow: 0 24px 80px rgba(21, 68, 63, .12);
+      color: var(--klp-text);
+      background:
+        radial-gradient(circle at 12% 10%, rgba(245, 170, 50, .18), transparent 28%),
+        radial-gradient(circle at 86% 24%, rgba(98, 151, 102, .17), transparent 32%),
+        linear-gradient(145deg, #fcfaf4 0%, var(--klp-bg) 58%, #edf4ec 100%);
+      border: 1px solid var(--klp-line);
+      border-radius: 28px;
+      overflow: hidden;
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;
+      transition: color .35s ease, background .35s ease;
+    }
+    #kundalini-landing-concept.klp-dark {
+      --klp-bg: #062d2d;
+      --klp-surface: rgba(12, 70, 68, .64);
+      --klp-surface-strong: rgba(8, 54, 52, .92);
+      --klp-text: #f4f1e8;
+      --klp-muted: #b8cbc4;
+      --klp-line: rgba(230, 239, 228, .13);
+      --klp-shadow: 0 30px 88px rgba(0, 20, 20, .34);
+      background:
+        radial-gradient(circle at 10% 8%, rgba(245, 170, 50, .11), transparent 28%),
+        radial-gradient(circle at 87% 22%, rgba(98, 151, 102, .15), transparent 34%),
+        linear-gradient(145deg, #073b3b 0%, #062c2c 60%, #092f29 100%);
+    }
+    #kundalini-landing-concept * { box-sizing: border-box; }
+    #kundalini-landing-concept button,
+    #kundalini-landing-concept a { font: inherit; }
+    #kundalini-landing-concept button { color: inherit; }
+    #kundalini-landing-concept .klp-shell { width: min(1180px, calc(100% - 40px)); margin: 0 auto; }
+    #kundalini-landing-concept .klp-nav {
+      min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px;
+      border-bottom: 1px solid var(--klp-line);
+    }
+    #kundalini-landing-concept .klp-brand { display: flex; align-items: center; gap: 11px; min-width: 0; }
+    #kundalini-landing-concept .klp-mark {
+      width: 42px; height: 42px; display: grid; place-items: center; border-radius: 14px;
+      background: conic-gradient(from 35deg, var(--klp-teal), var(--klp-green), var(--klp-gold), var(--klp-terra), var(--klp-teal));
+      color: #fff; box-shadow: inset 0 0 0 5px rgba(255,255,255,.82), 0 8px 24px rgba(14,85,85,.16);
+      font-weight: 500;
+    }
+    #kundalini-landing-concept .klp-brand-copy { display: grid; }
+    #kundalini-landing-concept .klp-brand-copy strong { letter-spacing: .16em; font-weight: 500; }
+    #kundalini-landing-concept .klp-brand-copy span { color: var(--klp-muted); font-size: .76rem; }
+    #kundalini-landing-concept .klp-navlinks { display: flex; gap: 22px; align-items: center; }
+    #kundalini-landing-concept .klp-navlinks a { color: var(--klp-muted); text-decoration: none; font-size: .88rem; }
+    #kundalini-landing-concept .klp-actions { display: flex; gap: 10px; align-items: center; }
+    #kundalini-landing-concept .klp-icon-button,
+    #kundalini-landing-concept .klp-button,
+    #kundalini-landing-concept .klp-domain {
+      border: 1px solid var(--klp-line); cursor: pointer; transition: transform .2s ease, background .2s ease, border-color .2s ease;
+    }
+    #kundalini-landing-concept .klp-icon-button:hover,
+    #kundalini-landing-concept .klp-button:hover,
+    #kundalini-landing-concept .klp-domain:hover { transform: translateY(-2px); }
+    #kundalini-landing-concept .klp-icon-button {
+      width: 40px; height: 40px; border-radius: 50%; background: var(--klp-surface); display: grid; place-items: center;
+    }
+    #kundalini-landing-concept .klp-button {
+      min-height: 44px; padding: 0 18px; border-radius: 999px; display: inline-flex; align-items: center; justify-content: center;
+      text-decoration: none; gap: 8px; font-weight: 500;
+    }
+    #kundalini-landing-concept .klp-button-primary { color: #fff; background: var(--klp-teal); border-color: var(--klp-teal); box-shadow: 0 12px 34px rgba(14,85,85,.25); }
+    #kundalini-landing-concept .klp-button-secondary { color: var(--klp-text); background: var(--klp-surface); backdrop-filter: blur(14px); }
+    #kundalini-landing-concept .klp-hero { min-height: 650px; display: grid; grid-template-columns: 1.05fr .95fr; gap: 56px; align-items: center; padding: 74px 0 66px; }
+    #kundalini-landing-concept .klp-eyebrow { color: var(--klp-terra); text-transform: uppercase; letter-spacing: .15em; font-size: .78rem; font-weight: 500; margin: 0 0 18px; }
+    #kundalini-landing-concept h1,
+    #kundalini-landing-concept h2,
+    #kundalini-landing-concept h3,
+    #kundalini-landing-concept p { margin-top: 0; }
+    #kundalini-landing-concept h1 { font-size: clamp(2.6rem, 6vw, 5.2rem); line-height: .98; letter-spacing: -.055em; font-weight: 500; margin-bottom: 24px; max-width: 700px; }
+    #kundalini-landing-concept .klp-hero-lead { color: var(--klp-muted); max-width: 620px; font-size: 1.08rem; line-height: 1.75; }
+    #kundalini-landing-concept .klp-hero-cta { display: flex; flex-wrap: wrap; gap: 12px; margin: 28px 0 22px; }
+    #kundalini-landing-concept .klp-domain-note { color: var(--klp-muted); font-size: .84rem; line-height: 1.6; }
+    #kundalini-landing-concept .klp-domain-note strong { color: var(--klp-text); font-weight: 500; }
+    #kundalini-landing-concept .klp-proof { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 26px; }
+    #kundalini-landing-concept .klp-pill { padding: 8px 11px; border: 1px solid var(--klp-line); border-radius: 999px; background: var(--klp-surface); color: var(--klp-muted); font-size: .78rem; }
+    #kundalini-landing-concept .klp-phones { position: relative; min-height: 560px; display: grid; place-items: center; }
+    #kundalini-landing-concept .klp-orbit { position: absolute; inset: 8% 1% 7%; border: 1px solid var(--klp-line); border-radius: 50%; transform: rotate(-10deg); }
+    #kundalini-landing-concept .klp-orbit::before,
+    #kundalini-landing-concept .klp-orbit::after { content: &quot;&quot;; position: absolute; width: 12px; height: 12px; border-radius: 50%; background: var(--klp-gold); box-shadow: 0 0 0 8px rgba(245,170,50,.12); }
+    #kundalini-landing-concept .klp-orbit::before { top: 17%; left: 2%; }
+    #kundalini-landing-concept .klp-orbit::after { right: 2%; bottom: 20%; background: var(--klp-green); box-shadow: 0 0 0 8px rgba(98,151,102,.12); }
+    #kundalini-landing-concept .klp-phone-row { display: flex; justify-content: center; align-items: center; gap: 18px; position: relative; z-index: 2; width: 100%; }
+    #kundalini-landing-concept .klp-phone { width: min(230px, 44%); min-width: 0; border-radius: 34px; padding: 9px; box-shadow: var(--klp-shadow); border: 1px solid rgba(255,255,255,.28); transition: transform .35s ease; }
+    #kundalini-landing-concept .klp-phone:first-child { transform: translateY(-25px) rotate(-3deg); background: #fff; }
+    #kundalini-landing-concept .klp-phone:last-child { transform: translateY(28px) rotate(3deg); background: #062f2f; }
+    #kundalini-landing-concept .klp-phone:hover { transform: translateY(-6px) rotate(0); }
+    #kundalini-landing-concept .klp-screen { aspect-ratio: 9 / 18.5; overflow: hidden; border-radius: 27px; padding: 15px 12px; position: relative; }
+    #kundalini-landing-concept .klp-screen-light { color: #123c3a; background: linear-gradient(155deg, #fcfbf7 0%, #eef6ef 100%); }
+    #kundalini-landing-concept .klp-screen-dark { color: #f4f2e9; background: linear-gradient(155deg, #0b4442 0%, #062b2b 100%); }
+    #kundalini-landing-concept .klp-notch { width: 35%; height: 5px; border-radius: 10px; background: currentColor; opacity: .18; margin: 0 auto 14px; }
+    #kundalini-landing-concept .klp-mobile-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+    #kundalini-landing-concept .klp-mobile-brand { display: flex; align-items: center; gap: 6px; font-size: .62rem; letter-spacing: .12em; font-weight: 500; }
+    #kundalini-landing-concept .klp-mini-mark { width: 21px; height: 21px; border-radius: 7px; background: conic-gradient(var(--klp-teal), var(--klp-green), var(--klp-gold), var(--klp-terra), var(--klp-teal)); box-shadow: inset 0 0 0 3px rgba(255,255,255,.78); }
+    #kundalini-landing-concept .klp-avatar { width: 25px; height: 25px; border-radius: 50%; background: linear-gradient(145deg, var(--klp-gold), var(--klp-terra)); }
+    #kundalini-landing-concept .klp-welcome { font-size: .65rem; opacity: .7; margin-bottom: 3px; }
+    #kundalini-landing-concept .klp-mobile-title { font-size: 1rem; margin-bottom: 13px; font-weight: 500; }
+    #kundalini-landing-concept .klp-status { border-radius: 16px; padding: 12px; background: rgba(98,151,102,.16); border: 1px solid rgba(98,151,102,.25); margin-bottom: 11px; }
+    #kundalini-landing-concept .klp-status-line { display: flex; align-items: center; justify-content: space-between; gap: 8px; font-size: .62rem; }
+    #kundalini-landing-concept .klp-status-dot { width: 7px; height: 7px; border-radius: 50%; background: #56b26d; box-shadow: 0 0 0 5px rgba(86,178,109,.15); }
+    #kundalini-landing-concept .klp-quick { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+    #kundalini-landing-concept .klp-quick-item { border-radius: 14px; min-height: 66px; padding: 9px; background: rgba(255,255,255,.65); border: 1px solid rgba(14,85,85,.08); display: grid; align-content: space-between; }
+    #kundalini-landing-concept .klp-screen-dark .klp-quick-item { background: rgba(255,255,255,.07); border-color: rgba(255,255,255,.08); }
+    #kundalini-landing-concept .klp-quick-icon { width: 22px; height: 22px; border-radius: 8px; display: grid; place-items: center; font-size: .65rem; background: rgba(245,170,50,.2); color: #b46e00; }
+    #kundalini-landing-concept .klp-screen-dark .klp-quick-icon { color: #ffd783; }
+    #kundalini-landing-concept .klp-quick-item span:last-child { font-size: .58rem; }
+    #kundalini-landing-concept .klp-mobile-card { margin-top: 10px; padding: 11px; border-radius: 15px; background: rgba(220,107,61,.13); border: 1px solid rgba(220,107,61,.18); }
+    #kundalini-landing-concept .klp-mobile-card strong { display: block; font-size: .62rem; font-weight: 500; margin-bottom: 4px; }
+    #kundalini-landing-concept .klp-mobile-card span { font-size: .52rem; opacity: .72; line-height: 1.4; display: block; }
+    #kundalini-landing-concept .klp-phone-label { text-align: center; color: var(--klp-muted); font-size: .72rem; margin-top: 12px; }
+    #kundalini-landing-concept .klp-section { padding: 84px 0; border-top: 1px solid var(--klp-line); }
+    #kundalini-landing-concept .klp-section-head { display: flex; justify-content: space-between; align-items: end; gap: 30px; margin-bottom: 34px; }
+    #kundalini-landing-concept .klp-section-head h2 { font-size: clamp(2rem, 4vw, 3.7rem); line-height: 1.05; letter-spacing: -.045em; font-weight: 500; margin-bottom: 0; max-width: 670px; }
+    #kundalini-landing-concept .klp-section-head p { max-width: 430px; color: var(--klp-muted); line-height: 1.7; margin-bottom: 0; }
+    #kundalini-landing-concept .klp-ecosystem { display: grid; grid-template-columns: 1fr 1.15fr; gap: 28px; }
+    #kundalini-landing-concept .klp-eco-copy,
+    #kundalini-landing-concept .klp-infographic,
+    #kundalini-landing-concept .klp-step,
+    #kundalini-landing-concept .klp-boundary {
+      background: var(--klp-surface); backdrop-filter: blur(18px); border: 1px solid var(--klp-line); box-shadow: 0 18px 60px rgba(21,68,63,.06);
+    }
+    #kundalini-landing-concept .klp-eco-copy { border-radius: 26px; padding: 30px; }
+    #kundalini-landing-concept .klp-eco-copy h3 { font-size: 1.45rem; font-weight: 500; margin-bottom: 12px; }
+    #kundalini-landing-concept .klp-eco-copy p { color: var(--klp-muted); line-height: 1.75; }
+    #kundalini-landing-concept .klp-entity-detail { min-height: 88px; margin-top: 22px; padding: 16px; border-left: 3px solid var(--klp-gold); background: rgba(245,170,50,.08); border-radius: 0 16px 16px 0; }
+    #kundalini-landing-concept .klp-entity-detail strong { display: block; font-weight: 500; margin-bottom: 6px; }
+    #kundalini-landing-concept .klp-entity-detail span { color: var(--klp-muted); line-height: 1.6; font-size: .9rem; }
+    #kundalini-landing-concept .klp-infographic { min-height: 420px; border-radius: 26px; padding: 28px; display: grid; grid-template: repeat(3, 1fr) / repeat(3, 1fr); gap: 12px; position: relative; }
+    #kundalini-landing-concept .klp-node { border: 1px solid var(--klp-line); background: var(--klp-surface-strong); border-radius: 18px; padding: 13px; cursor: pointer; display: grid; place-items: center; text-align: center; min-width: 0; transition: .2s ease; }
+    #kundalini-landing-concept .klp-node:hover,
+    #kundalini-landing-concept .klp-node[aria-pressed=&quot;true&quot;] { border-color: var(--klp-gold); transform: scale(1.025); box-shadow: 0 12px 28px rgba(245,170,50,.12); }
+    #kundalini-landing-concept .klp-node span { font-size: .82rem; line-height: 1.3; }
+    #kundalini-landing-concept .klp-node i { width: 34px; height: 34px; border-radius: 12px; display: grid; place-items: center; font-style: normal; background: rgba(98,151,102,.14); margin-bottom: 7px; }
+    #kundalini-landing-concept .klp-node-center { grid-area: 2 / 2; border-radius: 50%; background: var(--klp-teal); color: #fff; box-shadow: 0 18px 50px rgba(14,85,85,.25); }
+    #kundalini-landing-concept .klp-node-center i { background: rgba(255,255,255,.15); }
+    #kundalini-landing-concept .klp-node-warga { grid-area: 1 / 2; }
+    #kundalini-landing-concept .klp-node-pengurus { grid-area: 2 / 1; }
+    #kundalini-landing-concept .klp-node-jaga { grid-area: 2 / 3; }
+    #kundalini-landing-concept .klp-node-ktb { grid-area: 3 / 2; }
+    #kundalini-landing-concept .klp-connector { align-self: center; justify-self: center; color: var(--klp-muted); opacity: .6; }
+    #kundalini-landing-concept .klp-connect-top { grid-area: 1 / 1; transform: rotate(45deg); }
+    #kundalini-landing-concept .klp-connect-right { grid-area: 1 / 3; transform: rotate(135deg); }
+    #kundalini-landing-concept .klp-connect-left { grid-area: 3 / 1; transform: rotate(-45deg); }
+    #kundalini-landing-concept .klp-connect-bottom { grid-area: 3 / 3; transform: rotate(-135deg); }
+    #kundalini-landing-concept .klp-domain-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+    #kundalini-landing-concept .klp-domain { min-height: 142px; text-align: left; border-radius: 20px; padding: 18px; background: var(--klp-surface); backdrop-filter: blur(14px); }
+    #kundalini-landing-concept .klp-domain[aria-pressed=&quot;true&quot;] { background: var(--klp-teal); color: #fff; border-color: var(--klp-teal); box-shadow: 0 16px 40px rgba(14,85,85,.2); }
+    #kundalini-landing-concept .klp-domain-symbol { width: 38px; height: 38px; border-radius: 13px; display: grid; place-items: center; background: rgba(245,170,50,.16); color: var(--klp-terra); margin-bottom: 20px; }
+    #kundalini-landing-concept .klp-domain[aria-pressed=&quot;true&quot;] .klp-domain-symbol { color: #fff; background: rgba(255,255,255,.14); }
+    #kundalini-landing-concept .klp-domain strong { display: block; font-weight: 500; line-height: 1.35; }
+    #kundalini-landing-concept .klp-domain-view { margin-top: 16px; padding: 24px; border: 1px solid var(--klp-line); border-radius: 20px; background: var(--klp-surface-strong); display: flex; justify-content: space-between; align-items: center; gap: 24px; }
+    #kundalini-landing-concept .klp-domain-view strong { font-weight: 500; }
+    #kundalini-landing-concept .klp-domain-view span { color: var(--klp-muted); line-height: 1.65; max-width: 780px; }
+    #kundalini-landing-concept .klp-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    #kundalini-landing-concept .klp-step { border-radius: 24px; padding: 26px; position: relative; overflow: hidden; }
+    #kundalini-landing-concept .klp-step-index { color: var(--klp-gold); font-size: 2.8rem; line-height: 1; opacity: .72; }
+    #kundalini-landing-concept .klp-step h3 { font-size: 1.25rem; font-weight: 500; margin: 28px 0 10px; }
+    #kundalini-landing-concept .klp-step p { color: var(--klp-muted); line-height: 1.7; margin-bottom: 0; }
+    #kundalini-landing-concept .klp-boundary { border-radius: 28px; padding: 34px; display: grid; grid-template-columns: .85fr 1.15fr; gap: 38px; align-items: center; }
+    #kundalini-landing-concept .klp-boundary h2 { font-size: clamp(1.9rem, 4vw, 3.2rem); line-height: 1.07; letter-spacing: -.04em; font-weight: 500; margin-bottom: 12px; }
+    #kundalini-landing-concept .klp-boundary p { color: var(--klp-muted); line-height: 1.7; margin-bottom: 0; }
+    #kundalini-landing-concept .klp-boundary-list { display: grid; gap: 10px; }
+    #kundalini-landing-concept .klp-boundary-item { display: flex; gap: 12px; align-items: flex-start; padding: 14px; border-radius: 16px; background: rgba(98,151,102,.09); }
+    #kundalini-landing-concept .klp-boundary-item b { width: 28px; height: 28px; flex: 0 0 auto; display: grid; place-items: center; border-radius: 10px; background: rgba(98,151,102,.2); font-weight: 500; }
+    #kundalini-landing-concept .klp-boundary-item span { color: var(--klp-muted); font-size: .9rem; line-height: 1.55; }
+    #kundalini-landing-concept .klp-final { text-align: center; padding: 94px 0; }
+    #kundalini-landing-concept .klp-javanese { color: var(--klp-terra); font-size: 1.65rem; margin-bottom: 12px; }
+    #kundalini-landing-concept .klp-final h2 { font-size: clamp(2.2rem, 5vw, 4.4rem); line-height: 1; letter-spacing: -.05em; font-weight: 500; max-width: 820px; margin: 0 auto 20px; }
+    #kundalini-landing-concept .klp-final p { color: var(--klp-muted); max-width: 650px; line-height: 1.75; margin: 0 auto 28px; }
+    #kundalini-landing-concept .klp-footer { min-height: 88px; border-top: 1px solid var(--klp-line); display: flex; justify-content: space-between; align-items: center; gap: 24px; color: var(--klp-muted); font-size: .82rem; }
+    #kundalini-landing-concept .klp-footer strong { color: var(--klp-text); font-weight: 500; }
+    #kundalini-landing-concept .klp-mode-text::before { content: &quot;☾&quot;; }
+    #kundalini-landing-concept.klp-dark .klp-mode-text::before { content: &quot;☀&quot;; }
+    @media (max-width: 940px) {
+      #kundalini-landing-concept .klp-navlinks { display: none; }
+      #kundalini-landing-concept .klp-hero { grid-template-columns: 1fr; gap: 24px; padding-top: 58px; }
+      #kundalini-landing-concept .klp-hero-copy { text-align: center; }
+      #kundalini-landing-concept .klp-hero-lead { margin-left: auto; margin-right: auto; }
+      #kundalini-landing-concept .klp-hero-cta,
+      #kundalini-landing-concept .klp-proof { justify-content: center; }
+      #kundalini-landing-concept .klp-phones { min-height: 500px; }
+      #kundalini-landing-concept .klp-ecosystem { grid-template-columns: 1fr; }
+      #kundalini-landing-concept .klp-domain-grid { grid-template-columns: repeat(2, 1fr); }
+      #kundalini-landing-concept .klp-section-head { align-items: flex-start; flex-direction: column; }
+    }
+    @media (max-width: 650px) {
+      #kundalini-landing-concept { border-radius: 20px; }
+      #kundalini-landing-concept .klp-shell { width: min(100% - 24px, 1180px); }
+      #kundalini-landing-concept .klp-nav { min-height: 68px; }
+      #kundalini-landing-concept .klp-brand-copy span { display: none; }
+      #kundalini-landing-concept .klp-actions .klp-button { display: none; }
+      #kundalini-landing-concept .klp-hero { min-height: auto; padding: 48px 0 42px; }
+      #kundalini-landing-concept .klp-hero-cta { flex-direction: column; }
+      #kundalini-landing-concept .klp-hero-cta .klp-button { width: 100%; }
+      #kundalini-landing-concept .klp-phones { min-height: 420px; }
+      #kundalini-landing-concept .klp-phone-row { gap: 8px; }
+      #kundalini-landing-concept .klp-phone { width: 48%; padding: 6px; border-radius: 25px; }
+      #kundalini-landing-concept .klp-screen { border-radius: 20px; padding: 11px 8px; }
+      #kundalini-landing-concept .klp-phone:first-child { transform: translateY(-12px) rotate(-2deg); }
+      #kundalini-landing-concept .klp-phone:last-child { transform: translateY(15px) rotate(2deg); }
+      #kundalini-landing-concept .klp-mobile-title { font-size: .82rem; }
+      #kundalini-landing-concept .klp-quick-item { min-height: 54px; padding: 7px; }
+      #kundalini-landing-concept .klp-quick-icon { width: 18px; height: 18px; }
+      #kundalini-landing-concept .klp-section { padding: 60px 0; }
+      #kundalini-landing-concept .klp-infographic { min-height: 350px; padding: 14px; }
+      #kundalini-landing-concept .klp-node { padding: 8px; border-radius: 14px; }
+      #kundalini-landing-concept .klp-node i { width: 28px; height: 28px; }
+      #kundalini-landing-concept .klp-node span { font-size: .68rem; }
+      #kundalini-landing-concept .klp-domain-grid { grid-template-columns: 1fr; }
+      #kundalini-landing-concept .klp-domain { min-height: 102px; display: grid; grid-template-columns: auto 1fr; align-items: center; gap: 14px; }
+      #kundalini-landing-concept .klp-domain-symbol { margin-bottom: 0; }
+      #kundalini-landing-concept .klp-domain-view { align-items: flex-start; flex-direction: column; }
+      #kundalini-landing-concept .klp-steps { grid-template-columns: 1fr; }
+      #kundalini-landing-concept .klp-boundary { grid-template-columns: 1fr; padding: 24px; }
+      #kundalini-landing-concept .klp-footer { align-items: flex-start; flex-direction: column; justify-content: center; padding: 24px 0; }
+    }
+  &lt;/style&gt;
+
+  &lt;header class=&quot;klp-shell klp-nav&quot;&gt;
+    &lt;div class=&quot;klp-brand&quot;&gt;
+      &lt;div class=&quot;klp-mark&quot; aria-hidden=&quot;true&quot;&gt;K&lt;/div&gt;
+      &lt;div class=&quot;klp-brand-copy&quot;&gt;&lt;strong&gt;KUNDALINI&lt;/strong&gt;&lt;span&gt;Kuncen Digdaya di Segala Lini&lt;/span&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;nav class=&quot;klp-navlinks&quot; aria-label=&quot;Navigasi konsep landing page&quot;&gt;
+      &lt;a href=&quot;#klp-ekosistem&quot;&gt;Ekosistem&lt;/a&gt;&lt;a href=&quot;#klp-lini&quot;&gt;Lini Layanan&lt;/a&gt;&lt;a href=&quot;#klp-alur&quot;&gt;Cara Kerja&lt;/a&gt;&lt;a href=&quot;#klp-keamanan&quot;&gt;Keamanan&lt;/a&gt;
+    &lt;/nav&gt;
+    &lt;div class=&quot;klp-actions&quot;&gt;
+      &lt;button class=&quot;klp-icon-button&quot; type=&quot;button&quot; data-klp-theme aria-label=&quot;Ganti mode tampilan&quot;&gt;&lt;span class=&quot;klp-mode-text&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;&lt;/button&gt;
+      &lt;a class=&quot;klp-button klp-button-primary&quot; href=&quot;https://app.kundalini.sbs&quot;&gt;Buka Aplikasi &lt;span aria-hidden=&quot;true&quot;&gt;↗&lt;/span&gt;&lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/header&gt;
+
+  &lt;main&gt;
+    &lt;section class=&quot;klp-shell klp-hero&quot;&gt;
+      &lt;div class=&quot;klp-hero-copy&quot;&gt;
+        &lt;p class=&quot;klp-eyebrow&quot;&gt;Pusat Kolaborasi &amp;amp; Ketangguhan Kampung&lt;/p&gt;
+        &lt;h1&gt;Kampung terhubung. Warga lebih siap.&lt;/h1&gt;
+        &lt;p class=&quot;klp-hero-lead&quot;&gt;KUNDALINI mempertemukan informasi, pelaporan, koordinasi, kesiapsiagaan, layanan warga, dan program kampung dalam satu ekosistem digital yang mudah digunakan.&lt;/p&gt;
+        &lt;div class=&quot;klp-hero-cta&quot;&gt;
+          &lt;a class=&quot;klp-button klp-button-primary&quot; href=&quot;https://app.kundalini.sbs&quot;&gt;Masuk ke app.kundalini.sbs &lt;span aria-hidden=&quot;true&quot;&gt;→&lt;/span&gt;&lt;/a&gt;
+          &lt;a class=&quot;klp-button klp-button-secondary&quot; href=&quot;#klp-ekosistem&quot;&gt;Jelajahi ekosistem&lt;/a&gt;
+        &lt;/div&gt;
+        &lt;p class=&quot;klp-domain-note&quot;&gt;&lt;strong&gt;Saat ini aplikasi KUNDALINI resmi menggunakan domain app.kundalini.sbs.&lt;/strong&gt;&lt;br&gt;Domain www.kundalini.sbs berfungsi sebagai halaman informasi publik dan pintu masuk menuju aplikasi.&lt;/p&gt;
+        &lt;div class=&quot;klp-proof&quot;&gt;&lt;span class=&quot;klp-pill&quot;&gt;Berbasis peran&lt;/span&gt;&lt;span class=&quot;klp-pill&quot;&gt;Adaptif terang–gelap&lt;/span&gt;&lt;span class=&quot;klp-pill&quot;&gt;Mobile-first&lt;/span&gt;&lt;span class=&quot;klp-pill&quot;&gt;Data sensitif terlindungi&lt;/span&gt;&lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;div class=&quot;klp-phones&quot; aria-label=&quot;Pratinjau antarmuka aplikasi dalam mode terang dan gelap&quot;&gt;
+        &lt;div class=&quot;klp-orbit&quot; aria-hidden=&quot;true&quot;&gt;&lt;/div&gt;
+        &lt;div class=&quot;klp-phone-row&quot;&gt;
+          &lt;div&gt;
+            &lt;div class=&quot;klp-phone&quot;&gt;
+              &lt;div class=&quot;klp-screen klp-screen-light&quot;&gt;
+                &lt;div class=&quot;klp-notch&quot;&gt;&lt;/div&gt;
+                &lt;div class=&quot;klp-mobile-top&quot;&gt;&lt;div class=&quot;klp-mobile-brand&quot;&gt;&lt;i class=&quot;klp-mini-mark&quot;&gt;&lt;/i&gt;KUNDALINI&lt;/div&gt;&lt;i class=&quot;klp-avatar&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+                &lt;div class=&quot;klp-welcome&quot;&gt;Sugeng rawuh, Kuncen&lt;/div&gt;&lt;div class=&quot;klp-mobile-title&quot;&gt;Siap, sigap, aman bersama.&lt;/div&gt;
+                &lt;div class=&quot;klp-status&quot;&gt;&lt;div class=&quot;klp-status-line&quot;&gt;&lt;span&gt;Status lingkungan kondusif&lt;/span&gt;&lt;i class=&quot;klp-status-dot&quot;&gt;&lt;/i&gt;&lt;/div&gt;&lt;/div&gt;
+                &lt;div class=&quot;klp-quick&quot;&gt;
+                  &lt;div class=&quot;klp-quick-item&quot;&gt;&lt;i class=&quot;klp-quick-icon&quot;&gt;!&lt;/i&gt;&lt;span&gt;SOS&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;klp-quick-item&quot;&gt;&lt;i class=&quot;klp-quick-icon&quot;&gt;＋&lt;/i&gt;&lt;span&gt;Buat laporan&lt;/span&gt;&lt;/div&gt;
+                  &lt;div class=&quot;klp-quick-item&quot;&gt;&lt;i class=&quot;klp-quick-icon&quot;&gt;⌖&lt;/i&gt;&lt;span&gt;Peta kampung&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;klp-quick-item&quot;&gt;&lt;i class=&quot;klp-quick-icon&quot;&gt;◎&lt;/i&gt;&lt;span&gt;Program warga&lt;/span&gt;&lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;klp-mobile-card&quot;&gt;&lt;strong&gt;Agenda terdekat&lt;/strong&gt;&lt;span&gt;Kerja bakti dan pemeriksaan kesehatan warga.&lt;/span&gt;&lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;klp-phone-label&quot;&gt;Mode terang&lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div&gt;
+            &lt;div class=&quot;klp-phone&quot;&gt;
+              &lt;div class=&quot;klp-screen klp-screen-dark&quot;&gt;
+                &lt;div class=&quot;klp-notch&quot;&gt;&lt;/div&gt;
+                &lt;div class=&quot;klp-mobile-top&quot;&gt;&lt;div class=&quot;klp-mobile-brand&quot;&gt;&lt;i class=&quot;klp-mini-mark&quot;&gt;&lt;/i&gt;KUNDALINI&lt;/div&gt;&lt;i class=&quot;klp-avatar&quot;&gt;&lt;/i&gt;&lt;/div&gt;
+                &lt;div class=&quot;klp-welcome&quot;&gt;Sugeng rawuh, Kuncen&lt;/div&gt;&lt;div class=&quot;klp-mobile-title&quot;&gt;Siap, sigap, aman bersama.&lt;/div&gt;
+                &lt;div class=&quot;klp-status&quot;&gt;&lt;div class=&quot;klp-status-line&quot;&gt;&lt;span&gt;Status lingkungan kondusif&lt;/span&gt;&lt;i class=&quot;klp-status-dot&quot;&gt;&lt;/i&gt;&lt;/div&gt;&lt;/div&gt;
+                &lt;div class=&quot;klp-quick&quot;&gt;
+                  &lt;div class=&quot;klp-quick-item&quot;&gt;&lt;i class=&quot;klp-quick-icon&quot;&gt;!&lt;/i&gt;&lt;span&gt;SOS&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;klp-quick-item&quot;&gt;&lt;i class=&quot;klp-quick-icon&quot;&gt;＋&lt;/i&gt;&lt;span&gt;Buat laporan&lt;/span&gt;&lt;/div&gt;
+                  &lt;div class=&quot;klp-quick-item&quot;&gt;&lt;i class=&quot;klp-quick-icon&quot;&gt;⌖&lt;/i&gt;&lt;span&gt;Peta kampung&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;klp-quick-item&quot;&gt;&lt;i class=&quot;klp-quick-icon&quot;&gt;◎&lt;/i&gt;&lt;span&gt;Program warga&lt;/span&gt;&lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;klp-mobile-card&quot;&gt;&lt;strong&gt;Agenda terdekat&lt;/strong&gt;&lt;span&gt;Kerja bakti dan pemeriksaan kesehatan warga.&lt;/span&gt;&lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;klp-phone-label&quot;&gt;Mode gelap&lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;klp-ekosistem&quot; class=&quot;klp-section&quot;&gt;
+      &lt;div class=&quot;klp-shell&quot;&gt;
+        &lt;div class=&quot;klp-section-head&quot;&gt;&lt;h2&gt;Satu ekosistem, empat penggerak kampung.&lt;/h2&gt;&lt;p&gt;KUNDALINI bukan pengganti organisasi yang sudah ada. Ia menjadi ruang bersama agar peran, data, dan tindak lanjut dapat bergerak selaras.&lt;/p&gt;&lt;/div&gt;
+        &lt;div class=&quot;klp-ecosystem&quot;&gt;
+          &lt;div class=&quot;klp-eco-copy&quot;&gt;
+            &lt;p class=&quot;klp-eyebrow&quot;&gt;Infografis kolaborasi&lt;/p&gt;&lt;h3&gt;Pilih salah satu penggerak&lt;/h3&gt;
+            &lt;p&gt;Setiap entitas memiliki mandat dan akses berbeda, namun bertemu pada koordinasi yang transparan dan terukur.&lt;/p&gt;
+            &lt;div class=&quot;klp-entity-detail&quot; aria-live=&quot;polite&quot;&gt;&lt;strong data-klp-entity-title&gt;Warga&lt;/strong&gt;&lt;span data-klp-entity-copy&gt;Melapor, menerima informasi, mengikuti program, dan menjaga kesiapsiagaan keluarga.&lt;/span&gt;&lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;klp-infographic&quot;&gt;
+            &lt;span class=&quot;klp-connector klp-connect-top&quot;&gt;⋯&lt;/span&gt;&lt;span class=&quot;klp-connector klp-connect-right&quot;&gt;⋯&lt;/span&gt;&lt;span class=&quot;klp-connector klp-connect-left&quot;&gt;⋯&lt;/span&gt;&lt;span class=&quot;klp-connector klp-connect-bottom&quot;&gt;⋯&lt;/span&gt;
+            &lt;button type=&quot;button&quot; class=&quot;klp-node klp-node-warga&quot; data-klp-entity=&quot;warga&quot; aria-pressed=&quot;true&quot;&gt;&lt;i&gt;⌂&lt;/i&gt;&lt;span&gt;Warga&lt;/span&gt;&lt;/button&gt;
+            &lt;button type=&quot;button&quot; class=&quot;klp-node klp-node-pengurus&quot; data-klp-entity=&quot;pengurus&quot; aria-pressed=&quot;false&quot;&gt;&lt;i&gt;⌘&lt;/i&gt;&lt;span&gt;Pengurus Kampung&lt;/span&gt;&lt;/button&gt;
+            &lt;div class=&quot;klp-node klp-node-center&quot;&gt;&lt;i&gt;K&lt;/i&gt;&lt;span&gt;KUNDALINI&lt;/span&gt;&lt;/div&gt;
+            &lt;button type=&quot;button&quot; class=&quot;klp-node klp-node-jaga&quot; data-klp-entity=&quot;jaga&quot; aria-pressed=&quot;false&quot;&gt;&lt;i&gt;◇&lt;/i&gt;&lt;span&gt;Jaga Warga&lt;/span&gt;&lt;/button&gt;
+            &lt;button type=&quot;button&quot; class=&quot;klp-node klp-node-ktb&quot; data-klp-entity=&quot;ktb&quot; aria-pressed=&quot;false&quot;&gt;&lt;i&gt;△&lt;/i&gt;&lt;span&gt;KTB Kuncen&lt;/span&gt;&lt;/button&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;klp-lini&quot; class=&quot;klp-section&quot;&gt;
+      &lt;div class=&quot;klp-shell&quot;&gt;
+        &lt;div class=&quot;klp-section-head&quot;&gt;&lt;h2&gt;Digdaya di segala lini.&lt;/h2&gt;&lt;p&gt;Beranda publik cukup memperkenalkan cakupan besar. Rincian operasional tetap berada di aplikasi dan mengikuti hak akses pengguna.&lt;/p&gt;&lt;/div&gt;
+        &lt;div class=&quot;klp-domain-grid&quot;&gt;
+          &lt;button type=&quot;button&quot; class=&quot;klp-domain&quot; data-klp-domain=&quot;siaga&quot; aria-pressed=&quot;true&quot;&gt;&lt;i class=&quot;klp-domain-symbol&quot;&gt;⚑&lt;/i&gt;&lt;strong&gt;Kesiapsiagaan &amp;amp; respons&lt;/strong&gt;&lt;/button&gt;
+          &lt;button type=&quot;button&quot; class=&quot;klp-domain&quot; data-klp-domain=&quot;kesehatan&quot; aria-pressed=&quot;false&quot;&gt;&lt;i class=&quot;klp-domain-symbol&quot;&gt;＋&lt;/i&gt;&lt;strong&gt;Kesehatan warga&lt;/strong&gt;&lt;/button&gt;
+          &lt;button type=&quot;button&quot; class=&quot;klp-domain&quot; data-klp-domain=&quot;lingkungan&quot; aria-pressed=&quot;false&quot;&gt;&lt;i class=&quot;klp-domain-symbol&quot;&gt;♧&lt;/i&gt;&lt;strong&gt;Lingkungan &amp;amp; sanitasi&lt;/strong&gt;&lt;/button&gt;
+          &lt;button type=&quot;button&quot; class=&quot;klp-domain&quot; data-klp-domain=&quot;sosial&quot; aria-pressed=&quot;false&quot;&gt;&lt;i class=&quot;klp-domain-symbol&quot;&gt;♡&lt;/i&gt;&lt;strong&gt;Perlindungan sosial&lt;/strong&gt;&lt;/button&gt;
+          &lt;button type=&quot;button&quot; class=&quot;klp-domain&quot; data-klp-domain=&quot;pangan&quot; aria-pressed=&quot;false&quot;&gt;&lt;i class=&quot;klp-domain-symbol&quot;&gt;◉&lt;/i&gt;&lt;strong&gt;Air, pangan &amp;amp; gizi&lt;/strong&gt;&lt;/button&gt;
+          &lt;button type=&quot;button&quot; class=&quot;klp-domain&quot; data-klp-domain=&quot;ekonomi&quot; aria-pressed=&quot;false&quot;&gt;&lt;i class=&quot;klp-domain-symbol&quot;&gt;↗&lt;/i&gt;&lt;strong&gt;Ekonomi &amp;amp; UMKM&lt;/strong&gt;&lt;/button&gt;
+          &lt;button type=&quot;button&quot; class=&quot;klp-domain&quot; data-klp-domain=&quot;pemuda&quot; aria-pressed=&quot;false&quot;&gt;&lt;i class=&quot;klp-domain-symbol&quot;&gt;✦&lt;/i&gt;&lt;strong&gt;Pendidikan &amp;amp; pemuda&lt;/strong&gt;&lt;/button&gt;
+          &lt;button type=&quot;button&quot; class=&quot;klp-domain&quot; data-klp-domain=&quot;budaya&quot; aria-pressed=&quot;false&quot;&gt;&lt;i class=&quot;klp-domain-symbol&quot;&gt;♫&lt;/i&gt;&lt;strong&gt;Seni, budaya &amp;amp; komunitas&lt;/strong&gt;&lt;/button&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;klp-domain-view&quot; aria-live=&quot;polite&quot;&gt;&lt;strong data-klp-domain-title&gt;Kesiapsiagaan &amp;amp; respons&lt;/strong&gt;&lt;span data-klp-domain-copy&gt;Laporan warga, Pusat Operasi, peta risiko, kesiapan keluarga, penugasan, dan koordinasi saat kondisi darurat.&lt;/span&gt;&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;klp-alur&quot; class=&quot;klp-section&quot;&gt;
+      &lt;div class=&quot;klp-shell&quot;&gt;
+        &lt;div class=&quot;klp-section-head&quot;&gt;&lt;h2&gt;Dari informasi menjadi tindakan.&lt;/h2&gt;&lt;p&gt;Alur yang sederhana membantu pengguna dengan tingkat literasi digital yang beragam.&lt;/p&gt;&lt;/div&gt;
+        &lt;div class=&quot;klp-steps&quot;&gt;
+          &lt;article class=&quot;klp-step&quot;&gt;&lt;span class=&quot;klp-step-index&quot;&gt;01&lt;/span&gt;&lt;h3&gt;Laporkan&lt;/h3&gt;&lt;p&gt;Warga menyampaikan kondisi, kebutuhan, atau gagasan melalui formulir yang ringkas dan mudah dipahami.&lt;/p&gt;&lt;/article&gt;
+          &lt;article class=&quot;klp-step&quot;&gt;&lt;span class=&quot;klp-step-index&quot;&gt;02&lt;/span&gt;&lt;h3&gt;Koordinasikan&lt;/h3&gt;&lt;p&gt;Petugas dan penggerak kampung memverifikasi, memetakan urgensi, lalu membagi tanggung jawab.&lt;/p&gt;&lt;/article&gt;
+          &lt;article class=&quot;klp-step&quot;&gt;&lt;span class=&quot;klp-step-index&quot;&gt;03&lt;/span&gt;&lt;h3&gt;Tindak lanjuti&lt;/h3&gt;&lt;p&gt;Perkembangan dapat dipantau sampai selesai, sehingga informasi tidak berhenti sebagai laporan semata.&lt;/p&gt;&lt;/article&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section id=&quot;klp-keamanan&quot; class=&quot;klp-section&quot;&gt;
+      &lt;div class=&quot;klp-shell&quot;&gt;
+        &lt;div class=&quot;klp-boundary&quot;&gt;
+          &lt;div&gt;&lt;p class=&quot;klp-eyebrow&quot;&gt;Kepercayaan sejak awal&lt;/p&gt;&lt;h2&gt;Terbuka untuk informasi, terbatas untuk data sensitif.&lt;/h2&gt;&lt;p&gt;Landing page menjelaskan manfaat tanpa membuka data operasional, identitas warga, lokasi rumah, atau catatan kesehatan pribadi.&lt;/p&gt;&lt;/div&gt;
+          &lt;div class=&quot;klp-boundary-list&quot;&gt;
+            &lt;div class=&quot;klp-boundary-item&quot;&gt;&lt;b&gt;1&lt;/b&gt;&lt;span&gt;Hak akses mengikuti peran pengguna: warga, pengurus, admin, dan petugas terkait.&lt;/span&gt;&lt;/div&gt;
+            &lt;div class=&quot;klp-boundary-item&quot;&gt;&lt;b&gt;2&lt;/b&gt;&lt;span&gt;Informasi kesehatan ditampilkan sebagai catatan dan edukasi, bukan diagnosis otomatis.&lt;/span&gt;&lt;/div&gt;
+            &lt;div class=&quot;klp-boundary-item&quot;&gt;&lt;b&gt;3&lt;/b&gt;&lt;span&gt;KUNDALINI bukan layanan darurat. Untuk keadaan darurat tetap hubungi 112 atau 119.&lt;/span&gt;&lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;section class=&quot;klp-shell klp-final&quot;&gt;
+      &lt;div class=&quot;klp-javanese&quot;&gt;ꦏꦸꦤ꧀ꦢꦭꦶꦤꦶ&lt;/div&gt;
+      &lt;h2&gt;Teknologi kampung yang terasa dekat.&lt;/h2&gt;
+      &lt;p&gt;Kenali ekosistem KUNDALINI di www.kundalini.sbs, lalu gunakan layanan resminya melalui app.kundalini.sbs.&lt;/p&gt;
+      &lt;a class=&quot;klp-button klp-button-primary&quot; href=&quot;https://app.kundalini.sbs&quot;&gt;Buka aplikasi resmi &lt;span aria-hidden=&quot;true&quot;&gt;↗&lt;/span&gt;&lt;/a&gt;
+    &lt;/section&gt;
+  &lt;/main&gt;
+
+  &lt;footer class=&quot;klp-shell klp-footer&quot;&gt;&lt;span&gt;&lt;strong&gt;www.kundalini.sbs&lt;/strong&gt; · Landing page publik&lt;/span&gt;&lt;span&gt;Aplikasi resmi: &lt;strong&gt;app.kundalini.sbs&lt;/strong&gt;&lt;/span&gt;&lt;/footer&gt;
+
+  &lt;script&gt;
+    (() =&gt; {
+      const root = document.getElementById('kundalini-landing-concept');
+      if (!root) return;
+      const themeButton = root.querySelector('[data-klp-theme]');
+      themeButton?.addEventListener('click', () =&gt; {
+        const dark = root.classList.toggle('klp-dark');
+        root.classList.toggle('klp-light', !dark);
+        themeButton.setAttribute('aria-label', dark ? 'Gunakan mode terang' : 'Gunakan mode gelap');
+      });
+
+      const entities = {
+        warga: ['Warga', 'Melapor, menerima informasi, mengikuti program, dan menjaga kesiapsiagaan keluarga.'],
+        pengurus: ['Pengurus Kampung', 'Menetapkan arah layanan, mengelola program, dan memastikan akuntabilitas tindak lanjut.'],
+        jaga: ['Jaga Warga', 'Menguatkan keamanan, ketertiban, perlindungan sosial, mediasi, dan kepedulian antarwarga.'],
+        ktb: ['KTB Kuncen', 'Menggerakkan kesiapsiagaan, mitigasi, simulasi, respons bencana, dan koordinasi lapangan.']
+      };
+      const entityTitle = root.querySelector('[data-klp-entity-title]');
+      const entityCopy = root.querySelector('[data-klp-entity-copy]');
+      root.querySelectorAll('[data-klp-entity]').forEach((button) =&gt; button.addEventListener('click', () =&gt; {
+        root.querySelectorAll('[data-klp-entity]').forEach((item) =&gt; item.setAttribute('aria-pressed', 'false'));
+        button.setAttribute('aria-pressed', 'true');
+        const value = entities[button.dataset.klpEntity];
+        if (value &amp;&amp; entityTitle &amp;&amp; entityCopy) { entityTitle.textContent = value[0]; entityCopy.textContent = value[1]; }
+      }));
+
+      const domains = {
+        siaga: ['Kesiapsiagaan &amp; respons', 'Laporan warga, Pusat Operasi, peta risiko, kesiapan keluarga, penugasan, dan koordinasi saat kondisi darurat.'],
+        kesehatan: ['Kesehatan warga', 'Posyandu, Posbindu, pengingat pemeriksaan, gizi, donor warga, dan akses terbatas untuk catatan pribadi.'],
+        lingkungan: ['Lingkungan &amp; sanitasi', 'Sampah, bank sampah, saluran tersumbat, genangan, penghijauan, serta pelaporan perubahan lingkungan.'],
+        sosial: ['Perlindungan sosial', 'Pendampingan lansia, disabilitas, balita, warga yang tinggal sendiri, dan kebutuhan sosial berbasis persetujuan.'],
+        pangan: ['Air, pangan &amp; gizi', 'Informasi sumber air, stok bantuan, dapur umum, urban farming, distribusi pangan, dan pencegahan gizi buruk.'],
+        ekonomi: ['Ekonomi &amp; UMKM', 'Pemetaan potensi, penguatan keterampilan, etalase usaha, kolaborasi, serta pertumbuhan UMKM kampung.'],
+        pemuda: ['Pendidikan &amp; pemuda', 'Edukasi kebencanaan sejak PAUD, simulasi, relawan muda, kuis, dan sertifikat kegiatan.'],
+        budaya: ['Seni, budaya &amp; komunitas', 'Agenda seni, pelestarian budaya, ruang kreasi, dokumentasi, dan partisipasi lintas generasi.']
+      };
+      const domainTitle = root.querySelector('[data-klp-domain-title]');
+      const domainCopy = root.querySelector('[data-klp-domain-copy]');
+      root.querySelectorAll('[data-klp-domain]').forEach((button) =&gt; button.addEventListener('click', () =&gt; {
+        root.querySelectorAll('[data-klp-domain]').forEach((item) =&gt; item.setAttribute('aria-pressed', 'false'));
+        button.setAttribute('aria-pressed', 'true');
+        const value = domains[button.dataset.klpDomain];
+        if (value &amp;&amp; domainTitle &amp;&amp; domainCopy) { domainTitle.textContent = value[0]; domainCopy.textContent = value[1]; }
+      }));
+    })();
+  &lt;/script&gt;
+&lt;/div&gt;
+
+
+&lt;style id=&quot;codex-visualization-document-scrollbar&quot;&gt;html,body{scrollbar-width:none!important}html::-webkit-scrollbar,body::-webkit-scrollbar{display:none!important}&lt;/style&gt;
+
+&lt;script src=&quot;https://unpkg.com/@floating-ui/core@1.7.3/dist/floating-ui.core.umd.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://unpkg.com/@floating-ui/dom@1.7.4/dist/floating-ui.dom.umd.min.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+(() =&gt; {
+  if (window.FloatingUIDOM == null) {
+    return;
+  }
+  const { autoUpdate, computePosition, flip, offset, shift, size } =
+    window.FloatingUIDOM;
+  const tooltipPlacements = new Set([&quot;top&quot;, &quot;right&quot;, &quot;bottom&quot;, &quot;left&quot;]);
+  const tooltipId = `codex-visualization-tooltip-${
+    window.crypto?.randomUUID?.() ?? Date.now().toString(36)
+  }`;
+  const tooltipGap = 5;
+  const hoverDelay = 700;
+  const skipDelay = 300;
+  let activeTrigger = null;
+  let pendingTrigger = null;
+  let tooltip = null;
+  let openTimeout = null;
+  let autoUpdateCleanup = null;
+  let positionRequest = 0;
+  let skipDelayUntil = 0;
+  let lastPointerWasTouch = false;
+  let pinnedByTouch = false;
+
+  const getTrigger = (target) =&gt;
+    target?.nodeType === Node.ELEMENT_NODE
+      ? target.closest(&quot;[data-tooltip]&quot;)
+      : null;
+  const containsTarget = (trigger, target) =&gt;
+    target?.nodeType != null &amp;&amp; trigger.contains(target);
+  const getContent = (trigger) =&gt;
+    trigger.getAttribute(&quot;data-tooltip&quot;)?.trim() ?? &quot;&quot;;
+  const getPlacement = (trigger) =&gt; {
+    const placement = trigger.getAttribute(&quot;data-tooltip-placement&quot;);
+    return tooltipPlacements.has(placement) ? placement : &quot;top&quot;;
+  };
+  const getTooltip = () =&gt; {
+    if (tooltip == null) {
+      tooltip = document.createElement(&quot;div&quot;);
+      tooltip.id = tooltipId;
+      tooltip.className = &quot;tooltip&quot;;
+      tooltip.setAttribute(&quot;role&quot;, &quot;tooltip&quot;);
+    }
+    return tooltip;
+  };
+  const setDescribedBy = (trigger, described) =&gt; {
+    const ids = new Set(
+      (trigger.getAttribute(&quot;aria-describedby&quot;) ?? &quot;&quot;)
+        .split(/\s+/)
+        .filter(Boolean),
+    );
+    if (described) {
+      ids.add(tooltipId);
+    } else {
+      ids.delete(tooltipId);
+    }
+    if (ids.size === 0) {
+      trigger.removeAttribute(&quot;aria-describedby&quot;);
+    } else {
+      trigger.setAttribute(&quot;aria-describedby&quot;, [...ids].join(&quot; &quot;));
+    }
+  };
+  const clearOpenTimeout = () =&gt; {
+    if (openTimeout != null) {
+      window.clearTimeout(openTimeout);
+      openTimeout = null;
+    }
+    pendingTrigger = null;
+  };
+  const closeTooltip = (activateSkipDelay = true) =&gt; {
+    clearOpenTimeout();
+    pinnedByTouch = false;
+    positionRequest += 1;
+    autoUpdateCleanup?.();
+    autoUpdateCleanup = null;
+    if (activeTrigger == null) {
+      return;
+    }
+    setDescribedBy(activeTrigger, false);
+    activeTrigger = null;
+    tooltip?.remove();
+    if (activateSkipDelay) {
+      skipDelayUntil = Date.now() + skipDelay;
+    }
+  };
+  const updatePosition = (trigger, floating) =&gt; {
+    const request = ++positionRequest;
+    void computePosition(trigger, floating, {
+      middleware: [
+        offset(tooltipGap),
+        flip({ padding: tooltipGap }),
+        shift({ padding: tooltipGap }),
+        size({
+          padding: tooltipGap,
+          apply({ availableHeight, availableWidth, elements }) {
+            elements.floating.style.setProperty(
+              &quot;--tooltip-available-width&quot;,
+              `${Math.max(0, availableWidth)}px`,
+            );
+            elements.floating.style.setProperty(
+              &quot;--tooltip-available-height&quot;,
+              `${Math.max(0, availableHeight)}px`,
+            );
+          },
+        }),
+      ],
+      placement: getPlacement(trigger),
+      strategy: &quot;fixed&quot;,
+    })
+      .then(({ x, y }) =&gt; {
+        if (activeTrigger !== trigger || request !== positionRequest) {
+          return;
+        }
+        const scale = window.devicePixelRatio || 1;
+        floating.style.transform = `translate(${Math.round(x * scale) / scale}px, ${Math.round(y * scale) / scale}px)`;
+        floating.style.visibility = &quot;visible&quot;;
+      })
+      .catch(() =&gt; {
+        if (activeTrigger === trigger &amp;&amp; request === positionRequest) {
+          closeTooltip(false);
+        }
+      });
+  };
+  const openTooltip = (trigger) =&gt; {
+    const content = getContent(trigger);
+    if (!trigger.isConnected || content.length === 0) {
+      return;
+    }
+    clearOpenTimeout();
+    if (activeTrigger === trigger) {
+      return;
+    }
+    closeTooltip();
+    const floating = getTooltip();
+    floating.textContent = content;
+    floating.style.visibility = &quot;hidden&quot;;
+    floating.style.transform = &quot;translate(0, 0)&quot;;
+    document.body.appendChild(floating);
+    activeTrigger = trigger;
+    setDescribedBy(trigger, true);
+    autoUpdateCleanup = autoUpdate(trigger, floating, () =&gt; {
+      updatePosition(trigger, floating);
+    });
+  };
+  const requestOpen = (trigger, immediate = false) =&gt; {
+    if (
+      getContent(trigger).length === 0 ||
+      activeTrigger === trigger ||
+      pendingTrigger === trigger
+    ) {
+      return;
+    }
+    clearOpenTimeout();
+    pendingTrigger = trigger;
+    const delay =
+      immediate || activeTrigger != null || Date.now() &lt; skipDelayUntil
+        ? 0
+        : hoverDelay;
+    if (delay === 0) {
+      openTooltip(trigger);
+      return;
+    }
+    openTimeout = window.setTimeout(() =&gt; {
+      openTimeout = null;
+      pendingTrigger = null;
+      openTooltip(trigger);
+    }, delay);
+  };
+  const handlePointerOpen = (event) =&gt; {
+    if (event.pointerType === &quot;touch&quot;) {
+      return;
+    }
+    const trigger = getTrigger(event.target);
+    if (trigger == null || containsTarget(trigger, event.relatedTarget)) {
+      return;
+    }
+    requestOpen(trigger);
+  };
+  const handlePointer = (event) =&gt; {
+    lastPointerWasTouch =
+      event.type === &quot;pointerdown&quot; &amp;&amp; event.pointerType === &quot;touch&quot;;
+  };
+  const handleTouchClick = (event) =&gt; {
+    const isTouch = event.pointerType === &quot;touch&quot; || lastPointerWasTouch;
+    lastPointerWasTouch = false;
+    if (!isTouch || event.detail === 0) {
+      return;
+    }
+    const trigger = getTrigger(event.target);
+    if (
+      trigger == null ||
+      !trigger.isConnected ||
+      getContent(trigger).length === 0 ||
+      (pinnedByTouch &amp;&amp; activeTrigger === trigger)
+    ) {
+      if (pinnedByTouch) {
+        closeTooltip();
+      }
+      return;
+    }
+    openTooltip(trigger);
+    pinnedByTouch = activeTrigger === trigger;
+    window.setTimeout(() =&gt; {
+      if (activeTrigger === trigger &amp;&amp; !trigger.isConnected) {
+        closeTooltip(false);
+      }
+    }, 0);
+  };
+  const handleLeave = (event) =&gt; {
+    if (pinnedByTouch) {
+      return;
+    }
+    const trigger = getTrigger(event.target);
+    if (trigger == null || containsTarget(trigger, event.relatedTarget)) {
+      return;
+    }
+    if (activeTrigger === trigger || pendingTrigger === trigger) {
+      closeTooltip();
+    }
+  };
+  const handleFocusIn = (event) =&gt; {
+    const trigger = getTrigger(event.target);
+    if (trigger?.matches(&quot;:focus-visible&quot;)) {
+      requestOpen(trigger, true);
+    }
+  };
+  const handleKeyDown = (event) =&gt; {
+    if (event.key === &quot;Escape&quot;) {
+      closeTooltip();
+    }
+  };
+  const handleContextMenu = (event) =&gt; {
+    lastPointerWasTouch = false;
+    const trigger = getTrigger(event.target);
+    if (activeTrigger === trigger || pendingTrigger === trigger) {
+      closeTooltip();
+    }
+  };
+  const destroy = () =&gt; {
+    closeTooltip(false);
+    lastPointerWasTouch = false;
+    document.removeEventListener(&quot;pointerover&quot;, handlePointerOpen);
+    document.removeEventListener(&quot;pointerdown&quot;, handlePointer);
+    document.removeEventListener(&quot;pointercancel&quot;, handlePointer);
+    document.removeEventListener(&quot;click&quot;, handleTouchClick);
+    document.removeEventListener(&quot;pointerout&quot;, handleLeave);
+    document.removeEventListener(&quot;focusin&quot;, handleFocusIn);
+    document.removeEventListener(&quot;focusout&quot;, handleLeave);
+    document.removeEventListener(&quot;keydown&quot;, handleKeyDown);
+    document.removeEventListener(&quot;contextmenu&quot;, handleContextMenu);
+    tooltip = null;
+  };
+
+  document.addEventListener(&quot;pointerover&quot;, handlePointerOpen);
+  document.addEventListener(&quot;pointerdown&quot;, handlePointer);
+  document.addEventListener(&quot;pointercancel&quot;, handlePointer);
+  document.addEventListener(&quot;click&quot;, handleTouchClick);
+  document.addEventListener(&quot;pointerout&quot;, handleLeave);
+  document.addEventListener(&quot;focusin&quot;, handleFocusIn);
+  document.addEventListener(&quot;focusout&quot;, handleLeave);
+  document.addEventListener(&quot;keydown&quot;, handleKeyDown);
+  document.addEventListener(&quot;contextmenu&quot;, handleContextMenu);
+  window.addEventListener(&quot;pagehide&quot;, destroy, { once: true });
+})();
+&lt;/script&gt;
+&lt;script id=&quot;codex-visualization-lucide&quot; async src=&quot;https://unpkg.com/lucide@1.17.0/dist/umd/lucide.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+(() =&gt; {
+  const initialize = () =&gt; {
+    globalThis.lucide?.createIcons({ attrs: { width: 16, height: 16 } });
+  };
+  if (globalThis.lucide != null) {
+    initialize();
+    return;
+  }
+  document
+    .getElementById(&quot;codex-visualization-lucide&quot;)
+    ?.addEventListener(&quot;load&quot;, initialize, { once: true });
+})();
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+"></iframe>
+<script>(() => {
+  const frame = document.getElementById("codex-visualization");
+  if (!(frame instanceof HTMLIFrameElement)) {
+    return;
+  }
+  let viewportHeight = globalThis.innerHeight;
+
+  const channel = new MessageChannel();
+  channel.port1.addEventListener("message", (event) => {
+    const data = event.data;
+    if (typeof data !== "object" || data == null) {
+      return;
+    }
+    if (data.type === "height") {
+      const height = data.height;
+      if (
+        typeof height === "number" &&
+        Number.isFinite(height) &&
+        height >= 0 &&
+        height <= 10_000
+      ) {
+        frame.style.height = Math.ceil(height) + "px";
+      }
+      return;
+    }
+    if (data.type === "scroll-to") {
+      const top = data.top;
+      if (
+        typeof top === "number" &&
+        Number.isFinite(top) &&
+        top >= 0 &&
+        globalThis.navigator.userActivation?.isActive === true
+      ) {
+        globalThis.scrollTo({
+          top: Math.ceil(
+            globalThis.scrollY + frame.getBoundingClientRect().top + top,
+          ),
+        });
+      }
+      return;
+    }
+    if (data.type === "open-external") {
+      const rawHref = data.href;
+      if (typeof rawHref !== "string") {
+        return;
+      }
+      let href;
+      try {
+        const url = new URL(rawHref, document.baseURI);
+        if (url.protocol !== "https:") {
+          return;
+        }
+        href = url.href;
+      } catch {
+        return;
+      }
+      if (globalThis.navigator.userActivation?.isActive === true) {
+        const anchor = document.createElement("a");
+        anchor.href = href;
+        anchor.rel = "noopener noreferrer";
+        anchor.target = "_blank";
+        document.body.appendChild(anchor);
+        anchor.click();
+        anchor.remove();
+      }
+      return;
+    }
+    if (data.type === "follow-up") {
+      const prompt = data.prompt;
+      if (
+        typeof prompt !== "string" ||
+        globalThis.navigator.userActivation?.isActive !== true
+      ) {
+        return;
+      }
+      const title = data.title;
+      globalThis.prompt(typeof title === "string" ? title : prompt, prompt);
+    }
+  });
+  channel.port1.start();
+  const srcdoc = frame.dataset.srcdoc;
+  if (srcdoc == null) {
+    return;
+  }
+  globalThis.addEventListener("resize", () => {
+    const height = Number.parseFloat(frame.style.height);
+    if (!Number.isFinite(height) || height <= viewportHeight) {
+      frame.style.removeProperty("height");
+    }
+    viewportHeight = globalThis.innerHeight;
+    channel.port1.postMessage({ type: "measure" });
+  });
+  frame.addEventListener(
+    "load",
+    () => {
+      frame.contentWindow?.postMessage(
+        { type: "codex-visualization-initialize" },
+        "*",
+        [channel.port2],
+      );
+    },
+    { once: true },
+  );
+  frame.srcdoc = srcdoc;
+  delete frame.dataset.srcdoc;
+})();
+</script>
+</body>
+</html>
