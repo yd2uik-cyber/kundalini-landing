@@ -1,0 +1,7 @@
+.footer-brand { padding: 0; background: transparent; border-radius: 0; }
+.footer-brand img { width: 220px; height: 48px; object-fit: contain; object-position: left center; display: block; }
+.footer-brand p { margin: 10px 0 0; color: #fff; font-size: 14px; }
+
+@media (max-width: 420px) {
+  .footer-brand img { width: 180px; }
+}
