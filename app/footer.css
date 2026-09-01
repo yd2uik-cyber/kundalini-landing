@@ -8,7 +8,7 @@
 .hero h1 { margin-bottom: 20px; }
 
 .guide-section { padding-top: 100px; padding-bottom: 100px; background: var(--paper); }
-.guide-section .section-heading { max-width: 760px; }
+.guide-section .section-heading { max-width: 760px; margin-bottom: 56px; }
 .guide-section .section-heading p { color: var(--muted); line-height: 1.7; font-size: 17px; }
 .guide-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
 .guide-grid article { min-height: 250px; border: 1px solid var(--line); border-radius: 28px; padding: 28px; background: var(--surface); }
