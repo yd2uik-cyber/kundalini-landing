@@ -1,7 +1,9 @@
 .footer-brand { padding: 0; background: transparent; border-radius: 0; }
-.footer-brand img { width: 220px; height: 48px; object-fit: contain; object-position: left center; display: block; }
+.footer-wordmark { width: 220px; height: 32px; overflow: hidden; }
+.footer-wordmark img { position: relative; display: block; width: 293px; max-width: none; height: auto; transform: translate(-35px, -88px); }
 .footer-brand p { margin: 10px 0 0; color: #fff; font-size: 14px; }
 
 @media (max-width: 420px) {
-  .footer-brand img { width: 180px; }
+  .footer-wordmark { width: 180px; height: 27px; }
+  .footer-wordmark img { width: 240px; transform: translate(-29px, -72px); }
 }
